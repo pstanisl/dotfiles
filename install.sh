@@ -4,37 +4,37 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
-function symlink() {
-  src="$1";
-  dest="$2";
+# function symlink() {
+#   src="$1";
+#   dest="$2";
 
-  if [ -e "$dest" ]; then
-    if [ -L "$dest" ]; then
-      # Already symlinked -- I'll assume correctly.
-      return;
-    else
-      # Rename files with a ".old" extension.
-      echo "$dest already exists, renaming to $dest.old";
-      backup="$dest.old";
-      if [ -e "$backup" ]; then
-        echo "Error: "$backup" already exists. Please delete or rename it.";
-        exit 1;
-      fi;
-      mv -v "$dest" "$backup";
-    fi;
-  fi;
-  ln -sf "$src" "$dest";
-}
+#   if [ -e "$dest" ]; then
+#     if [ -L "$dest" ]; then
+#       # Already symlinked -- I'll assume correctly.
+#       return;
+#     else
+#       # Rename files with a ".old" extension.
+#       echo "$dest already exists, renaming to $dest.old";
+#       backup="$dest.old";
+#       if [ -e "$backup" ]; then
+#         echo "Error: "$backup" already exists. Please delete or rename it.";
+#         exit 1;
+#       fi;
+#       mv -v "$dest" "$backup";
+#     fi;
+#   fi;
+#   ln -sf "$src" "$dest";
+# }
 
-function createSymlinks() {
-    OS=`uname`;
+# function createSymlinks() {
+#     OS=`uname`;
 
-    if [[ "${OS}" == "Darwin" ]]; then
-        symlink "./.vim/vimrc_mac" "$HOME/.vimrc";
-    else
-        symlink "./.vim/vimrc_main" "$HOME/.vimrc";
-    fi;
-}
+#     if [[ "${OS}" == "Darwin" ]]; then
+#         symlink "./.vim/vimrc_mac" "$HOME/.vimrc";
+#     else
+#         symlink "./.vim/vimrc_main" "$HOME/.vimrc";
+#     fi;
+# }
 
 function doIt() {
     rsync --exclude ".git/" \
@@ -46,7 +46,7 @@ function doIt() {
         -avh --no-perms . ~;
     source ~/.bash_profile;
 
-    createSymlinks;
+    # createSymlinks;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -59,5 +59,5 @@ else
     fi;
 fi;
 unset doIt;
-unset createSymlinks;
-unset symlink;
+# unset createSymlinks;
+# unset symlink;
