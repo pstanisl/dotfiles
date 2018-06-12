@@ -30,9 +30,9 @@ function createSymlinks() {
     OS=`uname`
 
     if [[ "${OS}" == "Darwin" ]]; then
-        symlink "$basedir/.vim/vimrc_mac" "$HOME/.vimrc"
+        symlink "./.vim/vimrc_mac" "$HOME/.vimrc"
     else
-        symlink "$basedir/.vim/vimrc_main" "$HOME/.vimrc"
+        symlink "./.vim/vimrc_main" "$HOME/.vimrc"
     fi
 }
 
