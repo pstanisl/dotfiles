@@ -1,0 +1,75 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show line numbers
+set number
+
+" Always show current position
+set ruler
+
+" Rendering
+set ttyfast
+
+" Status bar
+" set laststatus=2
+
+" Last line
+" set showmode
+" set showcmd
+
+" Blink cursor on error instead of beeping (grr)
+set visualbell
+
+" Visualize tabs and newlines
+" set listchars=tab:▸\ ,eol:¬
+
+" Turn on the Wild menu
+" set wildmenu
+
+" Height of the command bar
+set cmdheight=2
+
+" A buffer becomes hidden when it is abandoned
+set hid
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" enable syntax highlighting
+syntax enable
+
+try
+    set t_CO=256
+    let g:solarized_termcolors=256
+    let g:solarized_termtrans=1
+    " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+    " in ~/.vim/colors/ and uncomment:
+    colorscheme solarized
+catch
+endtry
+
+set background=dark
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and intent related
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
