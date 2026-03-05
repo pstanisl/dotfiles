@@ -1,0 +1,159 @@
+Include {{ .chezmoi.homeDir }}/.colima/ssh_config
+
+Host vpsFree-root
+    HostName 37.205.8.149
+    Port 22
+    IdentityFile ~/.ssh/vpsfree
+    User root
+Host vpsFree-pstanisl
+    HostName 37.205.8.149
+    Port 22
+    IdentityFile ~/.ssh/vpsfree
+    IdentitiesOnly yes
+    User pstanisl
+Host vpsFree-playground
+    HostName 37.205.14.55
+    IdentityFile ~/.ssh/vpsfree
+    IdentitiesOnly yes
+    User pstanisl
+Host bigdata-cem01
+    HostName 10.44.161.20
+    User pe072997
+    IdentityFile ~/.ssh/bigdata
+Host bigdata-cem02
+    HostName 10.44.161.21
+    User pe072997
+    IdentityFile ~/.ssh/bigdata
+Host bigdata-lx
+    HostName lxbigdata401vm.ux.to2cz.cz
+    User pe072997
+    IdentityFile ~/.ssh/lxbigdata401vm
+Host azure-etl-consumer
+    HostName 10.3.41.70
+    User pstanisl
+Host azure-etl-consumer-cert
+    HostName 10.3.41.70
+    User pstanisl
+    IdentityFile ~/.ssh/azure_rsa
+Host git.dataclair.ai.o2
+    Preferredauthentications publickey
+    IdentityFile ~/.ssh/dataclair_git_rsa
+Host devhadoop
+    HostName lxsecbigdata.ux.to2cz.cz
+    User devhadoop
+    IdentityFile ~/.ssh/devhadoop_rsa
+Host ssh.dev.azure.com
+    HostName ssh.dev.azure.com
+    User petr.stanislav
+    IdentityFile ~/.ssh/azure_rsa
+Host azure-nifi-test
+    Hostname 10.3.39.22
+    User aicentre
+    Identityfile ~/.ssh/azure_rsa
+Host azure-personal-ubuntu
+    Hostname 10.58.131.22
+    User azureuser
+    Identityfile ~/.ssh/azure_rsa
+Host azure-amundsen-test
+    Hostname 10.58.131.8
+    User azureuser
+    Identityfile ~/.ssh/azure_rsa
+Host github.com
+    User git
+    Hostname github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/github_rsa
+Host raspberrypi
+    User pi
+    Hostname 192.168.1.129
+    IdentityFile ~/.ssh/raspberrypi
+    SetEnv TERM=xterm-256color
+Host raspberrypi5
+    User pi
+    Hostname 192.168.1.129
+    IdentityFile ~/.ssh/raspberrypi
+    IdentityAgent ~/.1password
+    SetEnv TERM=xterm-256color
+Host raspberrypi-zero
+    User pi
+    Hostname 192.168.1.203
+    IdentityFile ~/.ssh/raspberrypi
+    IdentityAgent ~/.1password
+    SetEnv TERM=xterm-256color
+Host o2sk-hadoop
+    User o2spark
+    Hostname lxhad410.ux.to2cz.cz
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
+Host db-proxy
+    User petr_stanislav_elin_ai
+    Hostname 34.32.161.150
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gcp_vms
+    SetEnv TERM=xterm-256color
+Host db-proxy-prod
+    User petr_stanislav_elin_ai
+    Hostname 34.32.136.251
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gcp_vms
+    SetEnv TERM=xterm-256color
+Host gcp-vmspstanisl001
+    User petr_stanislav
+    Hostname 34.141.177.169
+    Port 2424
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gcp_vms
+Host gcp-vmscelery-d-e2micro-001
+    User petr_stanislav
+    Hostname 34.88.210.0
+    Port 22
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gcp_vms
+    SetEnv TERM=xterm-256color
+Host gcp-vmscelery-p-e2small-001
+    User petr_stanislav
+    Hostname 34.88.75.14
+    Port 22
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gcp_vms
+Host gcp-vmpspstanisl-cpu-001
+    User petr_stanislav
+    Hostname 34.88.21.178
+    Port 22
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gcp_vms
+    SetEnv TERM=xterm-256color
+Host o2czdatalake
+    User o2czdatalake.vbinternal
+    Hostname o2czdatalake.blob.core.windows.net
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/vb_internal
+Host elinai-dev-a100
+    User azureuser
+    Hostname 135.116.20.100
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/azure_rsa
+    SetEnv TERM=xterm-256color
+Host elinai-aml-nc40adds-h100-v5
+    User azureuser
+    Hostname 4.180.160.83
+    Port 50000
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/azure_rsa
+    SetEnv TERM=xterm-256color
+Host elinai-stg-db-proxy
+    User azureuser
+    Hostname 135.225.86.56
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/elinai-stg-key.pem
+    SetEnv TERM=xterm-256color
+Host elinai-aws-db-proxy
+    User ubuntu
+    Hostname 34.240.209.141
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/aws-vpn-gw.pem
+    SetEnv TERM=xterm-256color
+Host network.git.cz.o2:
+    IdentityAgent "~/.1password"
+Host *
+    IdentityAgent "{{ .chezmoi.homeDir }}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

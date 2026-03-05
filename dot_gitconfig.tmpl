@@ -1,0 +1,20 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+[core]
+	excludesfile = {{ .chezmoi.homeDir }}/.gitignore
+	editor = nvim
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+[merge]
+	conflictstyle = zdiff3
+[rerere]
+	enabled = true

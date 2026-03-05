@@ -1,0 +1,15 @@
+theme = Catppuccin Mocha
+
+auto-update-channel = tip
+
+background-opacity = 0.9
+background-blur-radius = 20
+
+window-width = 160
+window-height = 70
+
+keybind = global:super+f12=toggle_quick_terminal
+keybind = shift+enter=text:\n
+
+quick-terminal-position = right
+quick-terminal-size = 300px,100%

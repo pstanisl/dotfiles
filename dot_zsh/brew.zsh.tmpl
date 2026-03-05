@@ -1,0 +1,4 @@
+# Hardcode brew prefix to avoid running `brew --prefix` subprocess on every
+# shell start (~50-100ms). Update this path if Homebrew moves.
+# Previously: FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="{{ .homebrew_prefix }}/share/zsh/site-functions:${FPATH}"

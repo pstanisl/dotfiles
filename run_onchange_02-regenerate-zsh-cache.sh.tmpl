@@ -1,0 +1,38 @@
+#!/bin/bash
+# Regenerate cached zsh init scripts.
+# This script re-runs whenever its content changes (chezmoi run_onchange_).
+#
+# To force regeneration, run: chezmoi apply
+# Or manually:
+#   fzf --zsh > ~/.zsh/cache/fzf.zsh
+#   starship init zsh > ~/.zsh/cache/starship.zsh
+#   atuin init zsh > ~/.zsh/cache/atuin.zsh
+#   zoxide init zsh > ~/.zsh/cache/zoxide.zsh
+set -euo pipefail
+
+CACHE_DIR="$HOME/.zsh/cache"
+mkdir -p "$CACHE_DIR"
+
+echo "==> Regenerating zsh cache files..."
+
+if command -v fzf &>/dev/null; then
+    fzf --zsh > "$CACHE_DIR/fzf.zsh"
+    echo "    fzf.zsh regenerated"
+fi
+
+if command -v starship &>/dev/null; then
+    starship init zsh > "$CACHE_DIR/starship.zsh"
+    echo "    starship.zsh regenerated"
+fi
+
+if command -v atuin &>/dev/null; then
+    atuin init zsh > "$CACHE_DIR/atuin.zsh"
+    echo "    atuin.zsh regenerated"
+fi
+
+if command -v zoxide &>/dev/null; then
+    zoxide init zsh > "$CACHE_DIR/zoxide.zsh"
+    echo "    zoxide.zsh regenerated"
+fi
+
+echo "==> Cache regeneration complete!"
