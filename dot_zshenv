@@ -7,9 +7,17 @@ else
   export EDITOR='nvim'
 fi
 
-# NVM direcory
+# NVM directory
 export NVM_DIR="$HOME/.nvm"
 
-# Poetry
+# Poetry / pipx
 export PATH="$HOME/.local/bin:$PATH"
 
+# Java (OpenJDK)
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# PostgreSQL client tools
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# LM Studio CLI
+export PATH="$PATH:$HOME/.cache/lm-studio/bin"
