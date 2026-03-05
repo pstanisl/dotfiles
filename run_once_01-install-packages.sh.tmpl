@@ -15,7 +15,7 @@ fi
 BREWFILE="{{ .chezmoi.sourceDir }}/Brewfile"
 if [ -f "$BREWFILE" ]; then
     echo "==> Installing Homebrew packages from Brewfile..."
-    brew bundle --file="$BREWFILE" --no-lock || true
+    brew bundle --file="$BREWFILE" || true
 fi
 
 # Install Oh-My-Zsh if missing
