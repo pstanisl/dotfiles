@@ -12,4 +12,4 @@ keybind = global:super+f12=toggle_quick_terminal
 keybind = shift+enter=text:\n
 
 quick-terminal-position = right
-quick-terminal-size = 300px,100%
+quick-terminal-size = 1000px,100%
