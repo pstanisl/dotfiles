@@ -1,4 +1,10 @@
-eval "$({{ .homebrew_prefix }}/bin/brew shellenv)"
+# Homebrew (static exports, faster than `brew shellenv` at startup)
+export HOMEBREW_PREFIX="{{ .homebrew_prefix }}"
+export HOMEBREW_CELLAR="{{ .homebrew_prefix }}/Cellar"
+export HOMEBREW_REPOSITORY="{{ .homebrew_prefix }}"
+export PATH="{{ .homebrew_prefix }}/bin:{{ .homebrew_prefix }}/sbin:$PATH"
+export MANPATH="{{ .homebrew_prefix }}/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="{{ .homebrew_prefix }}/share/info:${INFOPATH:-}"
 
 # Added by Obsidian
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"

@@ -40,11 +40,13 @@ This will:
 
 ### Window Management
 - `.config/aerospace/aerospace.toml` — AeroSpace tiling WM (vim-style bindings)
+- `.hammerspoon/init.lua` — Hammerspoon automation for recovering windows after monitor disconnects
 
 ### Tools
 - `.config/atuin/config.toml` — Atuin shell history (sync v2)
 - `.config/gh/config.yml` — GitHub CLI
 - `.config/btop/btop.conf` — System monitor
+- `.hammerspoon/README.txt` — Hammerspoon hotkey and permission notes
 
 ### SSH
 - `.ssh/config` — Templated (1Password agent path per machine)

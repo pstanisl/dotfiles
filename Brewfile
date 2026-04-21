@@ -212,6 +212,8 @@ cask "font-source-code-pro"
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Powerful macOS automation tool for window and system scripting
+cask "hammerspoon"
 # Keyboard shortcuts for every button on your screen
 cask "homerow"
 # System monitoring app

@@ -1,5 +1,8 @@
 # Performance profiling of zsh
-#zmodload zsh/zprof
+# Enable with: ZSH_PROFILE=1 zsh -i -c exit
+if [[ -n "${ZSH_PROFILE:-}" ]]; then
+  zmodload zsh/zprof
+fi
 
 # Oh-My-Zsh update settings
 zstyle ':omz:update' mode reminder
@@ -45,3 +48,7 @@ fi
 . "$HOME/.atuin/bin/env"
 source ~/.zsh/cache/atuin.zsh
 source ~/.zsh/cache/zoxide.zsh
+
+if [[ -n "${ZSH_PROFILE:-}" ]]; then
+  zprof
+fi
